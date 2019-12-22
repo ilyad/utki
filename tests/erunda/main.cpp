@@ -9,7 +9,7 @@ void *read_stack(uint8_t *out, unsigned amount, ...)
 {
     va_list a;
     va_start(a, amount);
-    uint8_t *start = (uint8_t *) a;
+    uint8_t *start = (uint8_t *) &out;
     for (unsigned i=0; i<amount; ++i)
         out[i] = start[i];
     va_end(a);
